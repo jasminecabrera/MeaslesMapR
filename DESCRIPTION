@@ -17,3 +17,5 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+URL: https://github.com/jasminecabrera/MeaslesMapR
+BugReports: https://github.com/jasminecabrera/MeaslesMapR/issues
