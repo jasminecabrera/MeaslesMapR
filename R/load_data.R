@@ -9,6 +9,7 @@
 #' @export
 #'
 #' @examples
+#' load_data()
 
 load_data <- function(){
   list(cases_month = readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-06-24/cases_month.csv'),

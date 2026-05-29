@@ -14,7 +14,9 @@ Imports:
     readr
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat (>= 3.0.0)
 VignetteBuilder: knitr
 URL: https://github.com/jasminecabrera/MeaslesMapR
 BugReports: https://github.com/jasminecabrera/MeaslesMapR/issues
+Config/testthat/edition: 3
