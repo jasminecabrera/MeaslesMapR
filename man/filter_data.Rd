@@ -10,11 +10,8 @@ filter_data(data)
 \item{data}{Dataset to filter.}
 }
 \value{
-Filtered and cleaned dataset.
+Filtered and cleaned data frame.
 }
 \description{
 Filters Data
-}
-\examples{
-filter_data()
 }

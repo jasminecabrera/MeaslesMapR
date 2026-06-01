@@ -19,18 +19,16 @@ knitr::opts_chunk$set(
 library(MeaslesMapR)
 ```
 
-### plotVaccination
+### plotCases
 
 ```{r}
-#| label: plotVaccination
+#| label: plotCases
 
-# plotVaccination
-plotVaccination(country, 
-               min_year = 2014, 
-               max_year = 2024)
+# plotCases
+plotCases(region, legend = F)
 ```
 
-When provided with a country and an optional year range, mapVaccination generates a line plot displaying a country's MCV1 vaccination rate across time.
+When provided with region(s) and an optional legend specification, plotCases generates a line plot displaying the total cases for countries in the regions.
 
 ### mapRegion
 
