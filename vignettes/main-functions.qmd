@@ -28,7 +28,7 @@ library(MeaslesMapR)
 plotCases(region, legend = F)
 ```
 
-When provided with region(s) and an optional legend specification, plotCases generates a line plot displaying the total cases for countries in the regions.
+When provided with region as a string and an optional legend boolean specification, plotCases generates a line plot displaying the total cases for countries in the region. Valid regions include "Africa," "Americas," "Eastern Mediterranean," "Europe," "South East Asia," and "Western Pacific."
 
 ### summarizeYear
 
@@ -39,18 +39,18 @@ When provided with region(s) and an optional legend specification, plotCases gen
 summarizeYear(year)
 ```
 
-When provided with a year, summarizeYear generates a table where each row represents a region along with its average measles cases per million and average population. The table is sorted in descending order by average measles cases per million and uses a darker color gradient to visually indicate higher case counts.
+When provided with a year as an integer, summarizeYear generates a table where each row represents a region along with its average measles cases per million and the country with the highest number of cases for that year.
 
-### filter_data
+### summarizeRegion
 
 ```{r}
-#| label: filter_data
+#| label: summarizeRegion
 
-# filter_data
-filter_data(data)
+# summarizeRegion
+summarizeRegion(region)
 ```
 
-A helper function that cleans the data loaded in from load_data().
+When provided with a region as a string, summarizeRegion generates a table where each row represents one country in the region and its measles cases count per million over each year in the data.
 
 ### validateRegion
 
@@ -61,7 +61,7 @@ A helper function that cleans the data loaded in from load_data().
 validateRegion(region, data)
 ```
 
-A helper function that when given a region name and a data frame, checks whether the data frame contains data for that region.
+A helper function that when given a region name as a string and a data frame, checks whether the data frame contains data for that region. Valid regions include "Africa," "Americas," "Eastern Mediterranean," "Europe," "South East Asia," and "Western Pacific"
 
 ### validateYear
 
@@ -72,7 +72,18 @@ A helper function that when given a region name and a data frame, checks whether
 validateYear(year1, year2 = NULL)
 ```
 
-A helper function that given two years, checks that the years are actual years.
+A helper function that given two years as integers, checks that the years are actual years.
+
+### modelCases
+
+```{r}
+#| label: modelCases
+
+# modelCases
+modelCases(interaction = T)
+```
+
+Runs a model and displays summary output for a generalized linear negative binomial model with total measles as the response
 
 ### load_data
 
@@ -83,4 +94,26 @@ A helper function that given two years, checks that the years are actual years.
 load_data()
 ```
 
-A function to load in the Measles data from tidytuesdayR.
+Generates a cleaned dataset that holds the measles data for each country across varying years.
+
+### load_WorldData
+
+```{r}
+#| label: modelCases
+
+# load_WorldData
+load_WorldData(target_year)
+```
+
+Generates a cleaned dataset that holds the measles data for each country across varying years as well as its polygon shapes to create a leaflet map.
+
+### mapCases
+
+```{r}
+#| label: mapCases
+
+# mapCases
+mapCases(target_year)
+```
+
+Generates a leaflet map that highlights countries based on their region. When hovering over a given region, it produces a popup that shows the countries' measles cases, MCV1 Coverage and Nominal GDP per Capita for a given year.

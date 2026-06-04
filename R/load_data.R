@@ -12,5 +12,9 @@
 #' load_data()
 
 load_data <- function(){
-  list(cases_month = readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-06-24/cases_month.csv'),
-       cases_year = readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-06-24/cases_year.csv'))}
+  path <- system.file("extdata", "measles_df_clean.csv", package = "MeaslesMapR")
+  arrow::read_csv_arrow(path) |>
+    dplyr::mutate(
+      `Nominal GDP` = readr::parse_number(as.character(`Nominal GDP`)),
+      `Total Pop.` = readr::parse_number(as.character(`Total Pop.`)),
+      `Nominal GDP per Capita` = `Nominal GDP` / `Total Pop.`)}

@@ -11,12 +11,19 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 8.0.0
 Imports: 
-    readr
+    glmmTMB,
+    readr,
+    dplyr,
+    ggplot2,
+    ggrepel,
+    stringr,
+    leaflet,
+    rnaturalearth
 Suggests: 
     knitr,
     rmarkdown,
     testthat (>= 3.0.0)
 VignetteBuilder: knitr
-URL: https://github.com/jasminecabrera/MeaslesMapR
-BugReports: https://github.com/jasminecabrera/MeaslesMapR/issues
+URL: https://github.com/rjimenezdata/measlesmapr
+BugReports: https://github.com/rjimenezdata/measlesmapr/issues
 Config/testthat/edition: 3

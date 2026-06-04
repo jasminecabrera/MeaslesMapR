@@ -10,17 +10,10 @@
 validateRegion <- function(region, data){
 
   # check if all countries in vector of region names are valid
-
   if (!all(region %in% data$Region)) {
 
-    stop("Please enter valid region name(s)")
-
-  }
+    stop("Please enter valid region name(s)")}
 
   else {
 
-    invisible(TRUE)
-
-  }
-
-}
+    invisible(TRUE)}}
